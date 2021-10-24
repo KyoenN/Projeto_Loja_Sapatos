@@ -2,14 +2,9 @@
 
 namespace SiteTeste.Controllers
 {
-    public class LoginController : Controller
+    public class VendasController : Controller
     {
         public IActionResult Index()
-        {
-            return View();
-        }
-
-        public IActionResult Registro()
         {
             return View();
         }
