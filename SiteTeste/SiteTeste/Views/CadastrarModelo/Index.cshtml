@@ -2,6 +2,14 @@
     ViewData["Title"] = "Cadastro de Modelos";
 }
 <!doctype html>
+<style>
+    body {
+        color: black;
+    }
+    h2 {
+        text-align: center;
+    }
+</style>
 <html lang="pt-br">
 <head>
     
@@ -13,45 +21,43 @@
 
 </head>
 <body>
-    <h1>Cadastro de Modelo</h1>
-    <form>
-        <div class="form-group">
-            <label for="nome_modelo">Fornecedor:</label>
-            <input type="text" class="form-control" id="nome_modelo" aria-describedby="emailHelp" placeholder="Nome do fornecedor">
+    <div class="container">
+    <div class="row">
+        <div class="col-lg-10 col-xl-9 mx-auto">
+            <div class="card flex-row my-5 border-0 shadow rounded-3 overflow-hidden">
+                <div class="card-img-left d-none d-md-flex">
+                </div>
+                <div class="card-body p-4 p-sm-5">
+                    <h2>Cadastro de Modelo</h2>
+                    <form>
+                        <div class="form-group">
+                            <label for="nome_modelo">Fornecedor:</label>
+                            <input type="text" class="form-control" id="nome_fornecedor" aria-describedby="emailHelp" placeholder="Nome do fornecedor">
+                        </div>
+                        <div class="form-group">
+                            <label for="nome_modelo">Insira o modelo:</label>
+                            <input type="text" class="form-control" id="nome_modelo" aria-describedby="emailHelp" placeholder="Código do modelo">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleColorInput" class="form-label">Escolha a cor:</label>
+                            <input type="text" class="form-control" id="cor" aria-describedby="emailHelp" placeholder="Digite a cor">
+                        </div>
+                        <div class="form-group">
+                            <label for="nome_modelo">Informe a Quantidade:</label>
+                            <input type="number" class="form-control" id="quantidade" aria-describedby="emailHelp" placeholder="">
+                        </div>
+                        <button type="submit" class="btn btn-primary">Enviar</button>
+                    </form>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="form-group">
-            <label for="nome_modelo">Insira o modelo:</label>
-            <input type="text" class="form-control" id="nome_modelo" aria-describedby="emailHelp" placeholder="Nome do modelo">
-        </div>
-        <div class="form-group">
-            <label for="exampleColorInput" class="form-label">Escolha a cor:</label>
-            <input type="color" class="form-control form-control-color" id="exampleColorInput" value="" title="Choose your color">
-        </div>
-        <div class="form-group">
-            <label for="quantidade_modelo">Quantidade:</label>
-            <select class="form-select" aria-label="Default select example">
-                <option selected>Selecione a quantidade</option>
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5</option>
-                <option value="6">6</option>
-                <option value="7">7</option>
-                <option value="8">8</option>
-                <option value="9">9</option>
-                <option value="10">10</option>
-            </select>
-        </div>
-        <button type="submit" class="btn btn-primary">Enviar</button>
-    </form>
+    </div>
+                    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 
-    
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 
-    
-    <script src="https://cdn.jsdelivr.net/npm/popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
-    
+                    <script src="https://cdn.jsdelivr.net/npm/popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+                    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+
 </body>
 </html>
