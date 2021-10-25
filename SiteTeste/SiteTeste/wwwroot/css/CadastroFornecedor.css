@@ -5,7 +5,7 @@
 
 .card-img-left {
     width: 45%;
-    background: scroll center url('https://source.unsplash.com/WEQbe2jBg40/414x512');
+    background: scroll center url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQas4ssK0V25yiCN9zdjxt7rpTrYSmAmsuYvXpEO5mr8bZYlXvmrbcLvgf1-bi4LtQyRMY&usqp=CAU');
     background-size: cover;
 }
 
@@ -13,14 +13,4 @@
     font-size: 0.9rem;
     letter-spacing: 0.05rem;
     padding: 0.75rem 1rem;
-}
-
-.btn-google {
-    color: white !important;
-    background-color: #ea4335;
-}
-
-.btn-facebook {
-    color: white !important;
-    background-color: #3b5998;
 }

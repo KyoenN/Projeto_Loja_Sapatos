@@ -6,7 +6,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Content Remove="wwwroot\css\CadastroModelos.css" />
+    <Content Remove="wwwroot\css\Login.css" />
   </ItemGroup>
 
   <ItemGroup>

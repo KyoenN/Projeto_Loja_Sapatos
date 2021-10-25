@@ -1,3 +1,38 @@
 ﻿@{ 
     ViewData["Title"] = "Cadastrar Fornecedores";
 }
+<link rel="stylesheet" href="~/css/CadastroFornecedor.css"/>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-10 col-xl-9 mx-auto">
+                <div class="card flex-row my-5 border-0 shadow rounded-3 overflow-hidden">
+                    <div class="card-img-left d-none d-md-flex">
+                    </div>
+                    <div class="card-body p-4 p-sm-5">
+                        <h5 class="card-title text-center mb-5 fw-light fs-5">Cadastrar um fornecedor</h5>
+                        <form asp-controller="CadastroFornecedor" asp-action="Index">
+                            <div class="form-floating mb-3">
+                                <label>Nome do fornecedor</label>
+                                <input type="text" class="form-control" placeholder="Adidas">
+                            </div>
+                            <div class="form-floating mb-3">
+                                <label>CNPJ</label>
+                                <input type="text" class="form-control" placeholder="12345678900000">
+                            </div>
+                            <div class="form-floating">
+                                <label>Endereço</label>
+                                <input type="text" class="form-control" placeholder="Rua Mickey 123">
+                            </div>
+                            <hr>
+                            <div class="d-grid mb-2">
+                                <button class="btn btn-lg btn-primary btn-login fw-bold text-capitalize" type="submit">Enviar</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
