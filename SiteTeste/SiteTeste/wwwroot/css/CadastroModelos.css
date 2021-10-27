@@ -1,3 +1,4 @@
 ﻿body {
-    background-color: #343a40;
+    background: #343a40;
+    background: linear-gradient(to right, #343a40, #6c757d);
 }
