@@ -32,20 +32,43 @@
                     <form>
                         <div class="form-group">
                             <label for="nome_modelo">Fornecedor:</label>
-                            <input type="text" class="form-control" id="nome_fornecedor" aria-describedby="emailHelp" placeholder="Nome do fornecedor">
+                            <input type="text" class="form-control" id="nome_fornecedor"  placeholder="Nome do fornecedor">
                         </div>
                         <div class="form-group">
                             <label for="nome_modelo">Insira o modelo:</label>
-                            <input type="text" class="form-control" id="nome_modelo" aria-describedby="emailHelp" placeholder="Código do modelo">
+                            <input type="text" class="form-control" id="nome_modelo"  placeholder="Código do modelo">
                         </div>
                         <div class="form-group">
-                            <label for="exampleColorInput" class="form-label">Escolha a cor:</label>
+                            <label for="cor" class="form-label">Escolha a cor:</label>
                             <input type="text" class="form-control" id="cor" aria-describedby="emailHelp" placeholder="Digite a cor">
                         </div>
                         <div class="form-group">
-                            <label for="nome_modelo">Informe a Quantidade:</label>
-                            <input type="number" class="form-control" id="quantidade" aria-describedby="emailHelp" placeholder="">
+                            <label for="quantidade">Informe a Quantidade:</label>
+                            <input type="number" class="form-control" id="quantidade"  placeholder="Quantidade">
                         </div>
+                        <div>
+                            <label for="exampleDataList" class="form-label">Tamanho</label>
+                            <input class="form-control" list="datalistOptions" id="tamanho_sapato" placeholder="Selecione um número">
+                            <datalist id="datalistOptions">
+                                <option value="33"></option>
+                                <option value="34"></option>
+                                <option value="35"></option>
+                                <option value="36"></option>
+                                <option value="37"></option>
+                                <option value="38"></option>
+                                <option value="39"></option>
+                                <option value="40"></option>
+                                <option value="41"></option>
+                                <option value="42"></option>
+                                <option value="43"></option>
+                                <option value="44"></option>
+                                <option value="45"></option>
+                                <option value="46"></option>
+                                <option value="47"></option>
+                            </datalist>
+                        </div>
+                        <br>
+
                         <button type="submit" class="btn btn-primary">Enviar</button>
                     </form>
                     </div>

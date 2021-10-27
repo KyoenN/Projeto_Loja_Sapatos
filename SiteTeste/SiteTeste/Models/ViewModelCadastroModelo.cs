@@ -5,12 +5,13 @@ using System.Threading.Tasks;
 
 namespace SiteTeste.Models
 {
-    public class VendasViewModel
+    public class ViewModelCadastroModelo
     {
-        public string codProduto { get; set; }
+        public string codRef_modelo { get; set; }
         public string nome_fornecedor { get; set; }
-        public float preco { get; set; }
+        public string cor_modelo { get; set; }
+        public int tamanho_modelo { get; set; }
         public int quantidade { get; set; }
-
+       
     }
 }
