@@ -21,7 +21,13 @@ namespace SiteTeste
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            string sqlConnection = Configuration.GetConnectionString("DefaultConnection");
+            //repita a linha do sqlConnection trocando "DefaultConnection" pelo "SeuNomeConnecton" lá de appsettings.json. Isso vai fazer a conexão do código com o seu servidor e o banco de dados
+            //na sua máquina, comente todos os outros sqlConnection (o atalho é ctrl K C) e deixe somente o seu não comentado pra poder fazer a conexão. Se não fizer isso, vai dar erro por não encontrar as outras conexões
+
+            //string sqlConnection = Configuration.GetconnectionString("DefaultConnection");
+            //string sqlConnection = Configuration.GetConnectionString("DaniellaConnection");
+            string sqlConnection = Configuration.GetConnectionString("PatrickConnection");
+
 
             services.AddDbContextPool<AppDbContext>(options => options.UseSqlServer(sqlConnection));
 

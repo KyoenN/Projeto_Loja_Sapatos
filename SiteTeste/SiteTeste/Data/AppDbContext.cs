@@ -20,10 +20,28 @@ namespace SiteTeste.Data
             ORM = object-relational mapping */
 
         //faz mapeamento do fornecedor e deixa disponível no banco de dados
+        public DbSet<Cliente> Clientes { get; set; }
         public DbSet<Fornecedor> Fornecedores { get; set; }
+        public DbSet<Modelo> Modelos { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            modelBuilder.Entity<Cliente>()
+               .Property(p => p.nome)
+               .HasMaxLength(300);
+
+            modelBuilder.Entity<Cliente>()
+                .Property(p => p.CPF)
+                .HasMaxLength(11);
+
+            modelBuilder.Entity<Cliente>()
+                .Property(p => p.endereço)
+                .HasMaxLength(300);
+
+            modelBuilder.Entity<Cliente>()
+                .Property(p => p.sexo)
+                .HasMaxLength(1);
+
             modelBuilder.Entity<Fornecedor>()
                 .Property(p => p.Nome)
                 .HasMaxLength(200);
@@ -36,6 +54,15 @@ namespace SiteTeste.Data
                 .Property(p => p.CNPJ)
                 .HasMaxLength(14)
                 .IsRequired();
+
+            modelBuilder.Entity<Modelo>()
+                .Property(p => p.codReferencia)
+                .HasMaxLength(50)
+                .IsRequired();
+
+            modelBuilder.Entity<Modelo>()
+                .Property(p => p.cor)
+                .HasMaxLength(50);
         }
     }
 }
