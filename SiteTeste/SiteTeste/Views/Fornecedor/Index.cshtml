@@ -1,58 +1,46 @@
-﻿@{
-    ViewData["Title"] = "Fornecedor";
-}
-<link rel="stylesheet" href="~/css/Fornecedores.css"/>
-<header class="bg-dark text-center py-5 mb-4">
-    <div class="container">
-        <h1 class="fw-light text-white">Nossos fornecedores</h1>
-    </div>
-</header>
+﻿@model IEnumerable<SiteTeste.Models.Fornecedor>
 
-<div class="container">
-    <div class="row">
-        <div class="col-xl-3 col-md-6 mb-4">
-            <div class="card border-0 shadow">
-                <img src="https://images.unsplash.com/photo-1588110679566-158c6dea107c?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=758&q=80" class="card-img-top" alt="...">
-                <div class="card-body text-center">
-                    <a class="text-decoration-none text-black" href="">
-                        <h5 class="card-title mb-0 text-black">Adidas</h5>
-                        <div class="card-text text-black-50">Esporte & StreetWear</div>
-                    </a>
-                </div>
-            </div>
-        </div>
-        <div class="col-xl-3 col-md-6 mb-4">
-            <div class="card border-0 shadow">
-                <img src="https://images.unsplash.com/photo-1556906781-9a412961c28c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80" class="card-img-top" alt="...">
-                <div class="card-body text-center">
-                    <a class="text-decoration-none text-black" href="">
-                        <h5 class="card-title mb-0">Nike</h5>
-                        <div class="card-text text-black-50">Esporte & StreetWear</div>
-                    </a>
-                </div>
-            </div>
-        </div>
-        <div class="col-xl-3 col-md-6 mb-4">
-            <div class="card border-0 shadow">
-                <img src="https://images.unsplash.com/photo-1559745206-ca4056293ddc?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=764&q=80" class="card-img-top" alt="...">
-                <div class="card-body text-center">
-                    <a class="text-decoration-none text-black" href="">
-                        <h5 class="card-title mb-0">New Balance</h5>
-                        <div class="card-text text-black-50">Esporte & StreetWear</div>
-                    </a>
-                </div>
-            </div>
-        </div>
-        <div class="col-xl-3 col-md-6 mb-4">
-            <div class="card border-0 shadow">
-                <img src="https://cd.shoppub.com.br/villione/media/cache/b8/1b/b81b74dbe6e75dc74ec12a5436dec76b.jpg" class="card-img-top" alt="...">
-                <div class="card-body text-center">
-                    <a class="text-decoration-none text-black" href="">
-                        <h5 class="card-title mb-0">Villione</h5>
-                        <div class="card-text text-black-50">Sociais & Luxuosos</div>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+@{
+    ViewData["Title"] = "Index";
+}
+<h1 style="color: white; text-align: center">Fornecedores</h1>
+<p>
+    <a asp-action="Create" style="padding: 10px" class="btn btn-primary">Cadastrar Fornecedor</a>
+    @*<a asp-controller="CadastroFornecedor" asp-action="Index">Adicionar Fornecedor</a>*@
+</p>
+<table class="table table-hover thead-dark table-borderless table-dark">
+    <thead  class="thead-light">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Nome)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CNPJ)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Endereco)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nome)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CNPJ)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Endereco)
+            </td>
+            <td>
+                <a asp-action="Edit" class="btn btn-warning" asp-route-id="@item.Id">Editar</a> |
+                <a asp-action="Details" class="btn btn-info" asp-route-id="@item.Id">Detalhes</a> |
+                <a asp-action="Delete" class="btn btn-danger" asp-route-id="@item.Id">Excluir</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

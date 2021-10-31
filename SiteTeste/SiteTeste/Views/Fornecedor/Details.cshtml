@@ -1,0 +1,44 @@
+﻿@model SiteTeste.Models.Fornecedor
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-10 col-xl-8 mx-auto">
+                <div class="card flex-row my-5 border-0 shadow rounded-3 overflow-hidden">
+                    <div class="card-body p-4 p-sm-5">
+                        <h5 class="card-title text-center mb-5 fw-light fs-5">Detalhes Fornecedor</h5>
+                        <dl class="row">
+                            <dt class="col-sm-2">
+                                @Html.DisplayNameFor(model => model.Nome)
+                            </dt>
+                            <dd class="col-sm-10">
+                                @Html.DisplayFor(model => model.Nome)
+                            </dd>
+                            <dt class="col-sm-2">
+                                @Html.DisplayNameFor(model => model.CNPJ)
+                            </dt>
+                            <dd class="col-sm-10">
+                                @Html.DisplayFor(model => model.CNPJ)
+                            </dd>
+                            <dt class="col-sm-2">
+                                @Html.DisplayNameFor(model => model.Endereco)
+                            </dt>
+                            <dd class="col-sm-10">
+                                @Html.DisplayFor(model => model.Endereco)
+                            </dd>
+                        </dl>
+                        <div>
+                            <a asp-action="Edit" class="btn btn-warning" asp-route-id="@Model.Id">Editar</a> |
+                            <a asp-action="Index" class="btn btn-outline-success btn-login">Listar Fornecedores</a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
