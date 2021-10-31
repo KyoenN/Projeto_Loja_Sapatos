@@ -54,17 +54,27 @@ namespace SiteTeste.Data
             modelBuilder.Entity<Fornecedor>()
                 .Property(p => p.CNPJ)
                 .HasMaxLength(14)
-                .IsRequired();
+                .IsRequired();                      
 
             modelBuilder.Entity<Modelo>()
-                .Property(p => p.codReferencia)
+                .Property(p => p.CodReferencia)
                 .HasMaxLength(50)
                 .IsRequired();
 
             modelBuilder.Entity<Modelo>()
-                .Property(p => p.cor)
+                .Property(p => p.Nome)
+                .HasMaxLength(200);
+
+            modelBuilder.Entity<Modelo>()
+                .Property(p => p.Cor)
                 .HasMaxLength(50);
+
+            modelBuilder.Entity<Modelo>()
+                .Property(p => p.Tamanho)
+                .HasMaxLength(50)
+                .IsRequired();
         }
+
     }
 }
 

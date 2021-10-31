@@ -12,6 +12,6 @@ namespace SiteTeste.Models
         public string cor_modelo { get; set; }
         public int tamanho_modelo { get; set; }
         public int quantidade { get; set; }
-       
+
     }
 }

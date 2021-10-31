@@ -2,3 +2,13 @@
     background: #343a40;
     background: linear-gradient(to right, #343a40, #6c757d);
 }
+.card-img-left {
+    width: 45%;
+    background: scroll center url('https://4.bp.blogspot.com/-VchmfDORrSU/VMgu9PCXazI/AAAAAAAAWdw/DqdLmj00hso/s1600/43855-2560x1600.jpg');
+    background-size: cover;
+}
+.btn-login {
+    font-size: 0.9rem;
+    letter-spacing: 0.05rem;
+    padding: 0.75rem 1rem;
+}
