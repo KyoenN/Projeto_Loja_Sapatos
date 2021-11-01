@@ -121,28 +121,28 @@ namespace SiteTeste.Migrations
                 });
 
             modelBuilder.Entity("SiteTeste.Models.Venda", b =>
-                {
-                    b.Property<int>("id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+            {
+                b.Property<int>("id")
+                    .ValueGeneratedOnAdd()
+                    .HasColumnType("int")
+                    .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<DateTime>("data_vendas")
-                        .HasColumnType("datetime2");
+                b.Property<int>("id_cliente")
+                    .HasColumnType("int");
 
-                    b.Property<int>("id_cliente")
-                        .HasColumnType("int");
+                b.Property<int>("id_modelo")
+                    .HasColumnType("int");
 
-                    b.Property<int>("id_modelo")
-                        .HasColumnType("int");
+                b.Property<int>("quantidade")
+                    .HasColumnType("int");
 
-                    b.Property<int>("quantidade")
-                        .HasColumnType("int");
+                b.Property<float>("valorTotal")
+                    .HasColumnType("real");
 
-                    b.HasKey("id");
+                b.HasKey("id");
 
-                    b.ToTable("Vendas");
-                });
+                b.ToTable("Vendas");
+            });
 #pragma warning restore 612, 618
         }
     }

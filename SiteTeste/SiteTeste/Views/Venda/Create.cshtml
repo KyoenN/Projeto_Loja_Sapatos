@@ -1,0 +1,86 @@
+﻿@model SiteTeste.Models.Venda
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+
+<!doctype html>
+<style>
+    body {
+        color: black;
+    }
+</style>
+<html lang="pt-br">
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-10 col-xl-9 mx-auto">
+                <div class="card flex-row my-5 border-0 shadow rounded-3 overflow-hidden">
+                    <div class="card-img-left d-none d-md-flex">
+                    </div>
+                    <div class="card-body p-4 p-sm-5">
+                        <form asp-action="Create">
+                            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                            <div class=" text-center">
+                                <h2>Vendas</h2>
+                            </div>
+                            <br />
+                            <p class="fw-light">Preencha abaixo com informações do produto para efetuar compra.</p>
+                            <div class="form-group">
+                                <label asp-for="id_modelo" class="control-label">Insira o ID do modelo:</label>
+                                <input asp-for="id_modelo" class="form-control" />
+                                <span asp-validation-for="id_modelo" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="id_cliente" class="control-label">Insira o ID do cliente:</label>
+                                <input asp-for="id_cliente" class="form-control" />
+                                <span asp-validation-for="id_cliente" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="quantidade" class="control-label">Informe a quantidade:</label>
+                                <input asp-for="quantidade" class="form-control" />
+                                <span asp-validation-for="quantidade" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <label asp-for="valorTotal" class="control-label">Preço:</label>
+                                <input asp-for="valorTotal" class="form-control" />
+                                <span asp-validation-for="valorTotal" class="text-danger"></span>
+                            </div>
+                            <div class="form-group">
+                                <input type="submit" value="Comprar" class="btn btn-primary btn-login" />
+                            </div>
+                            <div>
+                                <a asp-action="Index" class="btn btn-outline-success btn-login">Listar Vendas</a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+</body>
+</html>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
+@{
+    ViewData["Title"] = "Vendas";
+}
+
+

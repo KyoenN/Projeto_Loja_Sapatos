@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace SiteTeste.Migrations
 {
-    public partial class Migration_Venda : Migration
+    public partial class Migration_Vendas : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -16,7 +16,7 @@ namespace SiteTeste.Migrations
                     id_modelo = table.Column<int>(type: "int", nullable: false),
                     id_cliente = table.Column<int>(type: "int", nullable: false),
                     quantidade = table.Column<int>(type: "int", nullable: false),
-                    data_vendas = table.Column<DateTime>(type: "datetime2", nullable: false)
+                    valorTotal = table.Column<float>(type: "real", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -31,3 +31,4 @@ namespace SiteTeste.Migrations
         }
     }
 }
+
