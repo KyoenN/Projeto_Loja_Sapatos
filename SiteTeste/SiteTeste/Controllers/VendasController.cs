@@ -55,7 +55,7 @@ namespace SiteTeste.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,id_modelo,id_cliente,quantidade,data_vendas")] Vendas vendas)
+        public async Task<IActionResult> Create([Bind("Id,id_modelo,id_cliente,quantidade,data_vendas")] Venda vendas)
         {
             if (ModelState.IsValid)
             {
@@ -87,7 +87,7 @@ namespace SiteTeste.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,id_modelo,id_cliente,quantidade,data_vendas")] Vendas venda)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,id_modelo,id_cliente,quantidade,data_vendas")] Venda venda)
         {
             if (id != venda.id)
             {

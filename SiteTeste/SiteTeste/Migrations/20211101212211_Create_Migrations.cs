@@ -2,7 +2,7 @@
 
 namespace SiteTeste.Migrations
 {
-    public partial class Initial : Migration
+    public partial class Create_Migrations : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -41,18 +41,44 @@ namespace SiteTeste.Migrations
                 name: "Modelos",
                 columns: table => new
                 {
-                    id = table.Column<int>(type: "int", nullable: false)
+                    Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    id_fornecedor = table.Column<int>(type: "int", nullable: false),
-                    nome = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    codReferencia = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
-                    cor = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: true),
-                    tamanho = table.Column<int>(type: "int", nullable: false)
+                    Id_fornecedor = table.Column<int>(type: "int", nullable: false),
+                    Nome = table.Column<string>(type: "nvarchar(200)", maxLength: 200, nullable: true),
+                    CodReferencia = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
+                    Cor = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: true),
+                    Tamanho = table.Column<int>(type: "int", maxLength: 50, nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Modelos", x => x.id);
+                    table.PrimaryKey("PK_Modelos", x => x.Id);
                 });
+
+            migrationBuilder.CreateTable(
+                name: "Vendas",
+                columns: table => new
+                {
+                    id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    id_modelo = table.Column<int>(type: "int", nullable: false),
+                    id_cliente = table.Column<int>(type: "int", nullable: false),
+                    quantidade = table.Column<int>(type: "int", nullable: false),
+                    valorTotal = table.Column<float>(type: "real", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Vendas", x => x.id);
+                });
+
+            migrationBuilder.InsertData(
+                table: "Fornecedores",
+                columns: new[] { "Id", "CNPJ", "Endereco", "Nome" },
+                values: new object[] { 1, "42274696000194", "Rua Batatinha Frita, 123", "Adidas" });
+
+            migrationBuilder.InsertData(
+                table: "Fornecedores",
+                columns: new[] { "Id", "CNPJ", "Endereco", "Nome" },
+                values: new object[] { 2, "36226675000109", "Rua Batatinha Frita, 456", "Nike" });
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
@@ -65,6 +91,9 @@ namespace SiteTeste.Migrations
 
             migrationBuilder.DropTable(
                 name: "Modelos");
+
+            migrationBuilder.DropTable(
+                name: "Vendas");
         }
     }
 }
