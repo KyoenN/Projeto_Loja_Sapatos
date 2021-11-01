@@ -23,7 +23,7 @@ namespace SiteTeste.Data
         public DbSet<Cliente> Clientes { get; set; }
         public DbSet<Fornecedor> Fornecedores { get; set; }
         public DbSet<Modelo> Modelos { get; set; }
-        public DbSet<Venda> Vendas { get; set; }
+        public DbSet<Vendas> Vendas { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -73,8 +73,13 @@ namespace SiteTeste.Data
                 .Property(p => p.Tamanho)
                 .HasMaxLength(50)
                 .IsRequired();
-        }
 
+            modelBuilder.Entity<Fornecedor>()
+                .HasData(
+                    new Fornecedor { Nome = "Adidas", CNPJ = "42274696000194", Endereco = "Rua Batatinha Frita, 123", Id = 1 },
+                    new Fornecedor { Nome = "Nike", CNPJ = "36226675000109", Endereco = "Rua Batatinha Frita, 456", Id = 2 }
+                );
+        }
     }
 }
 

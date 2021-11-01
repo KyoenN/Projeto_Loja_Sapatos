@@ -29,7 +29,7 @@ namespace SiteTeste
             //string sqlConnection = Configuration.GetConnectionString("PatrickConnection");
             //string sqlConnection = Configuration.GetConnectionString("BarbaraConnection");
             //string sqlConnection = Configuration.GetConnectionString("LucianoConnection");
-            string sqlConnection = Configuration.GetConnectionString("ThiagoConnection");
+            string sqlConnection = Configuration.GetConnectionString("BarbaraConnection");
 
             services.AddDbContextPool<AppDbContext>(options => options.UseSqlServer(sqlConnection));
 
