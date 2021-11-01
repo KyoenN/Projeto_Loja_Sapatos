@@ -7,10 +7,11 @@ namespace SiteTeste.Models
 {
     public class VendasViewModel
     {
-        public string codProduto { get; set; }
-        public string nome_fornecedor { get; set; }
-        public float preco { get; set; }
-        public int quantidade { get; set; }
+        public List<string> codProduto { get; set; }
+        public List<string> nome_fornecedor { get; set; }
+        public List<float> preco { get; set; }
+        public List<int> quantidade { get; set; }
+        public DateTime dtVenda { get; set;}
 
     }
 }
