@@ -13,16 +13,19 @@
     <thead class="thead-light">
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.id_modelo)
+                @Html.DisplayNameFor(model => model.Id)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.id_cliente)
+                @Html.DisplayNameFor(model => model.Id_modelo)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.quantidade)
+                @Html.DisplayNameFor(model => model.Id_cliente)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.valorTotal)
+                @Html.DisplayNameFor(model => model.Quantidade)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ValorTotal)
             </th>
             <th></th>
         </tr>
@@ -30,24 +33,27 @@
     <tbody>
         @foreach (var item in Model)
         {
-            <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.id_modelo)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.id_cliente)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.quantidade)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.valorTotal)
-                </td>
-                <td>
-                    <a asp-action="Details" class="btn btn-info" asp-route-id="@item.id">Detalhes</a> |
-                    <a asp-action="Delete" class="btn btn-danger" asp-route-id="@item.id">Excluir</a>
-                </td>
-            </tr>
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Id_modelo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Id_cliente)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Quantidade)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ValorTotal)
+            </td>
+            <td>
+                <a asp-action="Details" class="btn btn-info" asp-route-id="@item.Id">Detalhes</a> |
+                <a asp-action="Delete" class="btn btn-danger" asp-route-id="@item.Id">Excluir</a>
+            </td>
+        </tr>
         }
     </tbody>
 </table>
