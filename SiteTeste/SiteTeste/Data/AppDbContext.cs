@@ -36,7 +36,7 @@ namespace SiteTeste.Data
                 .HasMaxLength(11);
 
             modelBuilder.Entity<Cliente>()
-                .Property(p => p.Endereço)
+                .Property(p => p.Endereco)
                 .HasMaxLength(300);
 
             modelBuilder.Entity<Cliente>()
@@ -82,7 +82,7 @@ namespace SiteTeste.Data
 
              modelBuilder.Entity<Cliente>()
                 .HasData(
-                    new Cliente { Nome = "Tio Pedro", CPF = "12345678900", Endereco = "Rua das Batatas ,52", sexo = "M", Id = 1 }
+                    new Cliente { Nome = "Tio Pedro", CPF = "12345678900", Endereco = "Rua das Batatas ,52", Sexo = "M", Id = 1 }
                     );
         }
     }
