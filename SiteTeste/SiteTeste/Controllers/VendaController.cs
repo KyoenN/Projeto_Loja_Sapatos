@@ -34,7 +34,7 @@ namespace SiteTeste.Controllers
             }
 
             var venda = await _context.Vendas
-                .FirstOrDefaultAsync(m => m.id == id);
+                .FirstOrDefaultAsync(m => m.Id == id);
             if (venda == null)
             {
                 return NotFound();
@@ -88,7 +88,7 @@ namespace SiteTeste.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, [Bind("id,id_modelo,id_cliente,quantidade,valorTotal")] Venda venda)
         {
-            if (id != venda.id)
+            if (id != venda.Id)
             {
                 return NotFound();
             }
@@ -102,7 +102,7 @@ namespace SiteTeste.Controllers
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!VendaExists(venda.id))
+                    if (!VendaExists(venda.Id))
                     {
                         return NotFound();
                     }
@@ -125,7 +125,7 @@ namespace SiteTeste.Controllers
             }
 
             var venda = await _context.Vendas
-                .FirstOrDefaultAsync(m => m.id == id);
+                .FirstOrDefaultAsync(m => m.Id == id);
             if (venda == null)
             {
                 return NotFound();
@@ -147,7 +147,7 @@ namespace SiteTeste.Controllers
 
         private bool VendaExists(int id)
         {
-            return _context.Vendas.Any(e => e.id == id);
+            return _context.Vendas.Any(e => e.Id == id);
         }
     }
 }

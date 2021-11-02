@@ -4,10 +4,11 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - Potato Shoes</title>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap" rel="stylesheet"> <!--GOOOGLE FONTS-->
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" />
 </head>
-<body> 
+<body>
     <header>
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
             <div class="container">
@@ -29,22 +30,22 @@
                             <a class="nav-link text-dark" asp-area="" asp-controller="Login" asp-action="Registro">Registrar-se</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Fornecedor" asp-action="Index">Fornecedor</a>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Fornecedor" asp-action="Index">Fornecedores</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Fornecedor" asp-action="Create">Cadastrar Fornecedores</a>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Fornecedor" asp-action="Create">Cadastrar Fornecedor</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Modelo" asp-action="Index">Modelo</a>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Modelo" asp-action="Index">Modelos</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Modelo" asp-action="Create">Cadastrar Modelos</a>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Modelo" asp-action="Create">Cadastrar Modelo</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Venda" asp-action="Index">Vendas</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Venda" asp-action="Create">Área de vendas</a>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Venda" asp-action="Create">Comprar Sapato</a>
                         </li>
 
                     </ul>
@@ -60,7 +61,8 @@
 
     <footer class="border-top footer text-muted">
         <div class="container">
-            &copy; 2021 - SiteTeste - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+            &copy; 2021 - Potato Shoes - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+
         </div>
     </footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
