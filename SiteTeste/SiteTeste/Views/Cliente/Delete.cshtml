@@ -1,0 +1,56 @@
+@model SiteTeste.Models.Cliente
+
+@{
+    ViewData["Title"] = "Delete";
+}
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-10 col-xl-8 mx-auto">
+                <div class="card flex-row my-5 border-0 shadow rounded-3 overflow-hidden">
+                    <div class="card-body p-4 p-sm-5">
+                        <h5 class="card-title text-center mb-5 fw-light fs-5">Excluir Cliente</h5>
+                        <dl class="row">
+                            <dt class="col-sm-3">
+                                @Html.DisplayNameFor(model => model.Id)
+                            </dt>
+                            <dd class="col-sm-9">
+                                @Html.DisplayFor(model => model.Id)
+                            </dd>
+                            <dt class="col-sm-3">
+                                @Html.DisplayNameFor(model => model.Nome Cliente)
+                            </dt>
+                            <dd class="col-sm-9">
+                                @Html.DisplayFor(model => model.Nome Cliente)
+                            </dd>
+                            <dt class="col-sm-3">
+                                @Html.DisplayNameFor(model => model.CPF)
+                            </dt>
+                            <dd class="col-sm-9">
+                                @Html.DisplayFor(model => model.CPF)
+                            </dd>
+                            <dt class="col-sm-3">
+                                @Html.DisplayNameFor(model => model.Endereco)
+                            </dt>
+                            <dd class="col-sm-9">
+                                @Html.DisplayFor(model => model.Endereco)
+                            </dd>
+                            <dt class="col-sm-3">
+                                @Html.DisplayNameFor(model => model.Sexo)
+                            </dt>
+                            <dd class="col-sm-9">
+                                @Html.DisplayFor(model => model.Sexo)
+                            </dd>
+                        </dl>
+
+                        <form asp-action="Delete">
+                            <input type="hidden" asp-for="Id" />
+                            <input type="submit" value="Excluir" class="btn btn-danger" /> |
+                            <a asp-action="Index" class="btn btn-outline-success btn-login">Listar Clientes</a>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>

@@ -28,7 +28,7 @@ namespace SiteTeste.Data
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Cliente>()
-               .Property(p => p.nome)
+               .Property(p => p.Nome)
                .HasMaxLength(300);
 
             modelBuilder.Entity<Cliente>()
@@ -36,11 +36,11 @@ namespace SiteTeste.Data
                 .HasMaxLength(11);
 
             modelBuilder.Entity<Cliente>()
-                .Property(p => p.endereço)
+                .Property(p => p.Endereço)
                 .HasMaxLength(300);
 
             modelBuilder.Entity<Cliente>()
-                .Property(p => p.sexo)
+                .Property(p => p.Sexo)
                 .HasMaxLength(1);
 
             modelBuilder.Entity<Fornecedor>()
@@ -79,6 +79,11 @@ namespace SiteTeste.Data
                     new Fornecedor { Nome = "Adidas", CNPJ = "42274696000194", Endereco = "Rua Batatinha Frita, 123", Id = 1 },
                     new Fornecedor { Nome = "Nike", CNPJ = "36226675000109", Endereco = "Rua Batatinha Frita, 456", Id = 2 }
                 );
+
+             modelBuilder.Entity<Cliente>()
+                .HasData(
+                    new Cliente { Nome = "Tio Pedro", CPF = "12345678900", Endereco = "Rua das Batatas ,52", sexo = "M", Id = 1 }
+                    );
         }
     }
 }

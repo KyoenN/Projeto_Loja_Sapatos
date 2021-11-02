@@ -1,0 +1,56 @@
+@model SiteTeste.Models.Cliente
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-10 col-xl-8 mx-auto">
+                <div class="card flex-row my-5 border-0 shadow rounded-3 overflow-hidden">
+                    <div class="card-body p-4 p-sm-5">
+                        <h5 class="card-title text-center mb-5 fw-light fs-5">Detalhes Cliente</h5>
+                        <dl class="row">
+                            <dt class="col-sm-3">
+                                @Html.DisplayNameFor(model => model.Id)
+                            </dt>
+                            <dd class="col-sm-9">
+                                @Html.DisplayFor(model => model.Id)
+                            </dd>
+                            <dt class="col-sm-3">
+                                @Html.DisplayNameFor(model => model.Nome)
+                            </dt>
+                            <dd class="col-sm-9">
+                                @Html.DisplayFor(model => model.Nome)
+                            </dd>
+                            <dt class="col-sm-3">
+                                @Html.DisplayNameFor(model => model.CPF)
+                            </dt>
+                            <dd class="col-sm-9">
+                                @Html.DisplayFor(model => model.CPF)
+                            </dd>
+                            <dt class="col-sm-3">
+                                @Html.DisplayNameFor(model => model.Endereco)
+                            </dt>
+                            <dd class="col-sm-9">
+                                @Html.DisplayFor(model => model.Endereco)
+                            </dd>
+                            <dt class="col-sm-3">
+                                @Html.DisplayNameFor(model => model.Sexo)
+                            </dt>
+                            <dd class="col-sm-9">
+                                @Html.DisplayFor(model => model.Sexo)
+                            </dd>
+                        </dl>
+                        <div>
+                            <a asp-action="Edit" class="btn btn-warning" asp-route-id="@Model.Id">Editar</a> |
+                            <a asp-action="Index" class="btn btn-outline-success btn-login">Listar Clientes</a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
