@@ -10,9 +10,9 @@ namespace SiteTeste.Models
     {
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
-        public int Id_modelo { get; set; }
-        public int Id_cliente { get; set; }
+        public int Id_Modelo { get; set; }
+        public int Id_Cliente { get; set; }
         public int Quantidade { get; set; }
-        public float ValorTotal { get; set; }
+        public float Valor_Total { get; set; }
     }
 }

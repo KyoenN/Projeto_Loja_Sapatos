@@ -10,7 +10,7 @@ namespace SiteTeste.Models
     {
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
-        public int Id_fornecedor { get; set; }
+        public int Id_Fornecedor { get; set; }
         public string Nome { get; set; }
         public string CodReferencia { get; set; }
         public string Cor { get; set; }

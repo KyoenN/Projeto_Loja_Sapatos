@@ -9,8 +9,8 @@ namespace SiteTeste.Models
     public class Estoque
     {
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int id { get; set; }
-        public int id_modelo { get; set; }
-        public int quantidade { get; set; }
+        public int Id { get; set; }
+        public int Id_modelo { get; set; }
+        public int Quantidade { get; set; }
     }
 }
