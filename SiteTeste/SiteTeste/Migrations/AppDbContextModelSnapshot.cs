@@ -20,7 +20,7 @@ namespace SiteTeste.Migrations
 
             modelBuilder.Entity("SiteTeste.Models.Cliente", b =>
                 {
-                    b.Property<int>("id")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
@@ -29,21 +29,31 @@ namespace SiteTeste.Migrations
                         .HasMaxLength(11)
                         .HasColumnType("nvarchar(11)");
 
-                    b.Property<string>("endereço")
+                    b.Property<string>("Endereco")
                         .HasMaxLength(300)
                         .HasColumnType("nvarchar(300)");
 
-                    b.Property<string>("nome")
+                    b.Property<string>("Nome")
                         .HasMaxLength(300)
                         .HasColumnType("nvarchar(300)");
 
-                    b.Property<string>("sexo")
+                    b.Property<string>("Sexo")
                         .HasMaxLength(1)
                         .HasColumnType("nvarchar(1)");
 
-                    b.HasKey("id");
+                    b.HasKey("Id");
 
                     b.ToTable("Clientes");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            CPF = "12345678900",
+                            Endereco = "Rua das Batatas ,52",
+                            Nome = "Tio Pedro",
+                            Sexo = "M"
+                        });
                 });
 
             modelBuilder.Entity("SiteTeste.Models.Fornecedor", b =>
@@ -55,8 +65,8 @@ namespace SiteTeste.Migrations
 
                     b.Property<string>("CNPJ")
                         .IsRequired()
-                        .HasMaxLength(14)
-                        .HasColumnType("nvarchar(14)");
+                        .HasMaxLength(30)
+                        .HasColumnType("nvarchar(30)");
 
                     b.Property<string>("Endereco")
                         .HasMaxLength(200)
@@ -103,7 +113,8 @@ namespace SiteTeste.Migrations
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar(50)");
 
-                    b.Property<int>("Id_fornecedor")
+                    b.Property<int>("Id_Fornecedor")
+                        .HasMaxLength(50)
                         .HasColumnType("int");
 
                     b.Property<string>("Nome")
@@ -117,28 +128,48 @@ namespace SiteTeste.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Modelos");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            CodReferencia = "12345",
+                            Cor = "Preto",
+                            Id_Fornecedor = 1,
+                            Nome = "Sapato",
+                            Tamanho = 37
+                        },
+                        new
+                        {
+                            Id = 2,
+                            CodReferencia = "12346",
+                            Cor = "Branca",
+                            Id_Fornecedor = 2,
+                            Nome = "Sandália",
+                            Tamanho = 38
+                        });
                 });
 
             modelBuilder.Entity("SiteTeste.Models.Venda", b =>
                 {
-                    b.Property<int>("id")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int>("id_cliente")
+                    b.Property<int>("Id_cliente")
                         .HasColumnType("int");
 
-                    b.Property<int>("id_modelo")
+                    b.Property<int>("Id_modelo")
                         .HasColumnType("int");
 
-                    b.Property<int>("quantidade")
+                    b.Property<int>("Quantidade")
                         .HasColumnType("int");
 
-                    b.Property<float>("valorTotal")
+                    b.Property<float>("Valor")
                         .HasColumnType("real");
 
-                    b.HasKey("id");
+                    b.HasKey("Id");
 
                     b.ToTable("Vendas");
                 });

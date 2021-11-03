@@ -10,16 +10,16 @@ namespace SiteTeste.Migrations
                 name: "Clientes",
                 columns: table => new
                 {
-                    id = table.Column<int>(type: "int", nullable: false)
+                    Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    nome = table.Column<string>(type: "nvarchar(300)", maxLength: 300, nullable: true),
+                    Nome = table.Column<string>(type: "nvarchar(300)", maxLength: 300, nullable: true),
                     CPF = table.Column<string>(type: "nvarchar(11)", maxLength: 11, nullable: true),
-                    endereço = table.Column<string>(type: "nvarchar(300)", maxLength: 300, nullable: true),
-                    sexo = table.Column<string>(type: "nvarchar(1)", maxLength: 1, nullable: true)
+                    Endereco = table.Column<string>(type: "nvarchar(300)", maxLength: 300, nullable: true),
+                    Sexo = table.Column<string>(type: "nvarchar(1)", maxLength: 1, nullable: true)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Clientes", x => x.id);
+                    table.PrimaryKey("PK_Clientes", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -29,7 +29,7 @@ namespace SiteTeste.Migrations
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Nome = table.Column<string>(type: "nvarchar(200)", maxLength: 200, nullable: true),
-                    CNPJ = table.Column<string>(type: "nvarchar(14)", maxLength: 14, nullable: false),
+                    CNPJ = table.Column<string>(type: "nvarchar(30)", maxLength: 30, nullable: false),
                     Endereco = table.Column<string>(type: "nvarchar(200)", maxLength: 200, nullable: true)
                 },
                 constraints: table =>
@@ -43,7 +43,7 @@ namespace SiteTeste.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    Id_fornecedor = table.Column<int>(type: "int", nullable: false),
+                    Id_Fornecedor = table.Column<int>(type: "int", maxLength: 50, nullable: false),
                     Nome = table.Column<string>(type: "nvarchar(200)", maxLength: 200, nullable: true),
                     CodReferencia = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
                     Cor = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: true),
@@ -58,27 +58,40 @@ namespace SiteTeste.Migrations
                 name: "Vendas",
                 columns: table => new
                 {
-                    id = table.Column<int>(type: "int", nullable: false)
+                    Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    id_modelo = table.Column<int>(type: "int", nullable: false),
-                    id_cliente = table.Column<int>(type: "int", nullable: false),
-                    quantidade = table.Column<int>(type: "int", nullable: false),
-                    valorTotal = table.Column<float>(type: "real", nullable: false)
+                    Id_modelo = table.Column<int>(type: "int", nullable: false),
+                    Id_cliente = table.Column<int>(type: "int", nullable: false),
+                    Quantidade = table.Column<int>(type: "int", nullable: false),
+                    Valor = table.Column<float>(type: "real", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Vendas", x => x.id);
+                    table.PrimaryKey("PK_Vendas", x => x.Id);
                 });
 
             migrationBuilder.InsertData(
-                table: "Fornecedores",
-                columns: new[] { "Id", "CNPJ", "Endereco", "Nome" },
-                values: new object[] { 1, "42274696000194", "Rua Batatinha Frita, 123", "Adidas" });
+                table: "Clientes",
+                columns: new[] { "Id", "CPF", "Endereco", "Nome", "Sexo" },
+                values: new object[] { 1, "12345678900", "Rua das Batatas ,52", "Tio Pedro", "M" });
 
             migrationBuilder.InsertData(
                 table: "Fornecedores",
                 columns: new[] { "Id", "CNPJ", "Endereco", "Nome" },
-                values: new object[] { 2, "36226675000109", "Rua Batatinha Frita, 456", "Nike" });
+                values: new object[,]
+                {
+                    { 1, "42274696000194", "Rua Batatinha Frita, 123", "Adidas" },
+                    { 2, "36226675000109", "Rua Batatinha Frita, 456", "Nike" }
+                });
+
+            migrationBuilder.InsertData(
+                table: "Modelos",
+                columns: new[] { "Id", "CodReferencia", "Cor", "Id_Fornecedor", "Nome", "Tamanho" },
+                values: new object[,]
+                {
+                    { 1, "12345", "Preto", 1, "Sapato", 37 },
+                    { 2, "12346", "Branca", 2, "Sandália", 38 }
+                });
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)

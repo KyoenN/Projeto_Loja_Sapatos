@@ -18,10 +18,10 @@
                                 @Html.DisplayFor(model => model.Id)
                             </dd>
                             <dt class="col-sm-3">
-                                @Html.DisplayNameFor(model => model.Id_fornecedor)
+                                @Html.DisplayNameFor(model => model.Id_Fornecedor)
                             </dt>
                             <dd class="col-sm-9">
-                                @Html.DisplayFor(model => model.Id_fornecedor)
+                                @Html.DisplayFor(model => model.Id_Fornecedor)
                             </dd>
                             <dt class="col-sm-3">
                                 @Html.DisplayNameFor(model => model.Nome)
@@ -50,7 +50,7 @@
                         </dl>
 
                         <form asp-action="Delete">
-                            <input type="hidden" asp-for="Id_fornecedor" />
+                            <input type="hidden" asp-for="Id_Fornecedor" />
                             <input type="submit" value="Excluir" class="btn btn-danger" /> |
                             <a asp-action="Index" class="btn btn-outline-success btn-login">Listar Modelos</a>
                         </form>

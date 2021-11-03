@@ -53,8 +53,13 @@ namespace SiteTeste.Data
 
             modelBuilder.Entity<Fornecedor>()
                 .Property(p => p.CNPJ)
-                .HasMaxLength(14)
-                .IsRequired();                      
+                .HasMaxLength(30)
+                .IsRequired();
+
+            modelBuilder.Entity<Modelo>()
+                .Property(p => p.Id_Fornecedor)
+                .HasMaxLength(50)
+                .IsRequired();
 
             modelBuilder.Entity<Modelo>()
                 .Property(p => p.CodReferencia)
@@ -83,6 +88,12 @@ namespace SiteTeste.Data
              modelBuilder.Entity<Cliente>()
                 .HasData(
                     new Cliente { Nome = "Tio Pedro", CPF = "12345678900", Endereco = "Rua das Batatas ,52", Sexo = "M", Id = 1 }
+                    );
+
+            modelBuilder.Entity<Modelo>()
+                .HasData(
+                    new Modelo { Nome = "Sapato", CodReferencia = "12345", Cor = "Preto", Tamanho = 37, Id_Fornecedor = 1, Id = 1  },
+                    new Modelo { Nome = "Sandália", CodReferencia = "12346", Cor = "Branca", Tamanho = 38,  Id_Fornecedor = 2, Id = 2 }
                     );
         }
     }
