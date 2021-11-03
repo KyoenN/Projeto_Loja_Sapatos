@@ -43,7 +43,7 @@ namespace SiteTeste.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    Id_Fornecedor = table.Column<int>(type: "int", maxLength: 50, nullable: false),
+                    Id_fornecedor = table.Column<int>(type: "int", maxLength: 50, nullable: false),
                     Nome = table.Column<string>(type: "nvarchar(200)", maxLength: 200, nullable: true),
                     CodReferencia = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
                     Cor = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: true),
@@ -58,16 +58,16 @@ namespace SiteTeste.Migrations
                 name: "Vendas",
                 columns: table => new
                 {
-                    Id = table.Column<int>(type: "int", nullable: false)
+                    id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    Id_modelo = table.Column<int>(type: "int", nullable: false),
-                    Id_cliente = table.Column<int>(type: "int", nullable: false),
-                    Quantidade = table.Column<int>(type: "int", nullable: false),
-                    Valor = table.Column<float>(type: "real", nullable: false)
+                    id_modelo = table.Column<int>(type: "int", nullable: false),
+                    id_cliente = table.Column<int>(type: "int", nullable: false),
+                    quantidade = table.Column<int>(type: "int", nullable: false),
+                    valorTotal = table.Column<float>(type: "real", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Vendas", x => x.Id);
+                    table.PrimaryKey("PK_Vendas", x => x.id);
                 });
 
             migrationBuilder.InsertData(
@@ -86,7 +86,7 @@ namespace SiteTeste.Migrations
 
             migrationBuilder.InsertData(
                 table: "Modelos",
-                columns: new[] { "Id", "CodReferencia", "Cor", "Id_Fornecedor", "Nome", "Tamanho" },
+                columns: new[] { "Id", "CodReferencia", "Cor", "Id_fornecedor", "Nome", "Tamanho" },
                 values: new object[,]
                 {
                     { 1, "12345", "Preto", 1, "Sapato", 37 },

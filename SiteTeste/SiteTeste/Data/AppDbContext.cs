@@ -57,7 +57,7 @@ namespace SiteTeste.Data
                 .IsRequired();
 
             modelBuilder.Entity<Modelo>()
-                .Property(p => p.Id_Fornecedor)
+                .Property(p => p.Id_fornecedor)
                 .HasMaxLength(50)
                 .IsRequired();
 
@@ -92,8 +92,8 @@ namespace SiteTeste.Data
 
             modelBuilder.Entity<Modelo>()
                 .HasData(
-                    new Modelo { Nome = "Sapato", CodReferencia = "12345", Cor = "Preto", Tamanho = 37, Id_Fornecedor = 1, Id = 1  },
-                    new Modelo { Nome = "Sandália", CodReferencia = "12346", Cor = "Branca", Tamanho = 38,  Id_Fornecedor = 2, Id = 2 }
+                    new Modelo { Nome = "Sapato", CodReferencia = "12345", Cor = "Preto", Tamanho = 37, Id_fornecedor = 1, Id = 1  },
+                    new Modelo { Nome = "Sandália", CodReferencia = "12346", Cor = "Branca", Tamanho = 38,  Id_fornecedor = 2, Id = 2 }
                     );
         }
     }

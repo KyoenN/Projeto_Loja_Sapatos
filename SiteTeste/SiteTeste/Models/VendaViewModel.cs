@@ -7,10 +7,10 @@ namespace SiteTeste.Models
 {
     public class VendaViewModel
     {
-        public int Id { get; set; }
-        public int Id_modelo { get; set; }
-        public int Id_cliente { get; set; }
-        public int Quantidade { get; set; }
-        public float Valor { get; set; }
+        public int id { get; set; }
+        public int id_modelo { get; set; }
+        public int id_cliente { get; set; }
+        public int quantidade { get; set; }
+        public float valorTotal { get; set; }
     }
 }

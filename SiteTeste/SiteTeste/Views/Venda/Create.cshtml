@@ -4,6 +4,7 @@
     ViewData["Title"] = "Create";
 }
 
+
 <!doctype html>
 <style>
     body {
@@ -36,24 +37,24 @@
                             <br />
                             <p class="fw-light">Preencha abaixo com informações do produto para efetuar compra.</p>
                             <div class="form-group">
-                                <label asp-for="Id_modelo" class="control-label">Insira o ID do modelo:</label>
-                                <input asp-for="Id_modelo" class="form-control" />
-                                <span asp-validation-for="Id_modelo" class="text-danger"></span>
+                                <label asp-for="id_modelo" class="control-label">Insira o ID do modelo:</label>
+                                <input asp-for="id_modelo" class="form-control" />
+                                <span asp-validation-for="id_modelo" class="text-danger"></span>
                             </div>
                             <div class="form-group">
-                                <label asp-for="Id_cliente" class="control-label">Insira o ID do cliente:</label>
-                                <input asp-for="Id_cliente" class="form-control" />
-                                <span asp-validation-for="Id_cliente" class="text-danger"></span>
+                                <label asp-for="id_cliente" class="control-label">Insira o ID do cliente:</label>
+                                <input asp-for="id_cliente" class="form-control" />
+                                <span asp-validation-for="id_cliente" class="text-danger"></span>
                             </div>
                             <div class="form-group">
-                                <label asp-for="Quantidade" class="control-label">Informe a quantidade:</label>
-                                <input asp-for="Quantidade" class="form-control" />
-                                <span asp-validation-for="Quantidade" class="text-danger"></span>
+                                <label asp-for="quantidade" class="control-label">Informe a quantidade:</label>
+                                <input asp-for="quantidade" class="form-control" />
+                                <span asp-validation-for="quantidade" class="text-danger"></span>
                             </div>
                             <div class="form-group">
-                                <label asp-for="Valor" class="control-label">Preço:</label>
-                                <input asp-for="Valor" class="form-control" />
-                                <span asp-validation-for="Valor" class="text-danger"></span>
+                                <label asp-for="valorTotal" class="control-label">Preço:</label>
+                                <input asp-for="valorTotal" class="form-control" />
+                                <span asp-validation-for="valorTotal" class="text-danger"></span>
                             </div>
                             <div class="form-group">
                                 <input type="submit" value="Comprar" class="btn btn-primary btn-login" />

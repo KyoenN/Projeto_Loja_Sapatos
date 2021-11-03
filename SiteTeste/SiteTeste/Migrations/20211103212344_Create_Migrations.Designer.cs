@@ -9,7 +9,7 @@ using SiteTeste.Data;
 namespace SiteTeste.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20211103194426_Create_Migrations")]
+    [Migration("20211103212344_Create_Migrations")]
     partial class Create_Migrations
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -115,7 +115,7 @@ namespace SiteTeste.Migrations
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar(50)");
 
-                    b.Property<int>("Id_Fornecedor")
+                    b.Property<int>("Id_fornecedor")
                         .HasMaxLength(50)
                         .HasColumnType("int");
 
@@ -137,7 +137,7 @@ namespace SiteTeste.Migrations
                             Id = 1,
                             CodReferencia = "12345",
                             Cor = "Preto",
-                            Id_Fornecedor = 1,
+                            Id_fornecedor = 1,
                             Nome = "Sapato",
                             Tamanho = 37
                         },
@@ -146,7 +146,7 @@ namespace SiteTeste.Migrations
                             Id = 2,
                             CodReferencia = "12346",
                             Cor = "Branca",
-                            Id_Fornecedor = 2,
+                            Id_fornecedor = 2,
                             Nome = "Sandália",
                             Tamanho = 38
                         });
@@ -154,24 +154,24 @@ namespace SiteTeste.Migrations
 
             modelBuilder.Entity("SiteTeste.Models.Venda", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<int>("id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<int>("Id_cliente")
+                    b.Property<int>("id_cliente")
                         .HasColumnType("int");
 
-                    b.Property<int>("Id_modelo")
+                    b.Property<int>("id_modelo")
                         .HasColumnType("int");
 
-                    b.Property<int>("Quantidade")
+                    b.Property<int>("quantidade")
                         .HasColumnType("int");
 
-                    b.Property<float>("Valor")
+                    b.Property<float>("valorTotal")
                         .HasColumnType("real");
 
-                    b.HasKey("Id");
+                    b.HasKey("id");
 
                     b.ToTable("Vendas");
                 });
